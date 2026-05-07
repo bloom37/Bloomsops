@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Pilates — Standard Operating Procedures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sage: #4a7c6f;
+    --sage-light: #e8f2ef;
+    --sage-mid: #a8cdc5;
+    --sage-dark: #2e5c52;
+    --cream: #faf8f4;
+    --sand: #ede8e0;
+    --dark: #2c3630;
+    --text: #3d4840;
+    --muted: #7a8a82;
+    --white: #ffffff;
+    --warning-bg: #fff8ec;
+    --warning-border: #d4900a;
+    --warning-text: #7a5200;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--sage);
+    padding: 3rem 2.5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .site-header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .site-header .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage-mid);
+    margin-bottom: 0.75rem;
+  }
+  .site-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+  .site-header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 1.5rem;
+  }
+  .header-pills {
+    display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+  }
+  .pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.03em;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* NAV */
+  .nav-bar {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 2rem;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: var(--radius);
+    padding: 10px;
+  }
+  .nav-btn {
+    flex: 1; min-width: 120px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.18s ease;
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    font-weight: 400;
+  }
+  .nav-btn:hover {
+    background: var(--sage-light);
+    color: var(--sage);
+    border-color: var(--sage-mid);
+  }
+  .nav-btn.active {
+    background: var(--sage);
+    color: white;
+    border-color: var(--sage);
+    font-weight: 500;
+  }
+  .nav-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* SECTION */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 1rem;
+  }
+  .page-title .title-icon {
+    width: 36px; height: 36px;
+    background: var(--sage-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .page-title .title-icon svg { width: 18px; height: 18px; color: var(--sage); }
+
+  /* QUICK REF GRID */
+  .quick-ref {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px; margin-bottom: 1.5rem;
+  }
+  .qr-item {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+  }
+  .qr-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .qr-val { font-size: 15px; font-weight: 500; color: var(--dark); }
+
+  /* SOP CARDS */
+  .sop-card {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .sop-card-header {
+    padding: 1.1rem 1.4rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.12s;
+    user-select: none;
+  }
+  .sop-card-header:hover { background: #f7f5f1; }
+  .card-title {
+    font-size: 15px; font-weight: 500;
+    display: flex; align-items: center; gap: 10px;
+    color: var(--dark);
+  }
+  .card-title svg { width: 18px; height: 18px; color: var(--sage); flex-shrink: 0; }
+  .chevron {
+    width: 16px; height: 16px; color: var(--muted);
+    transition: transform 0.22s ease; flex-shrink: 0;
+  }
+  .sop-card-header.open .chevron { transform: rotate(180deg); }
+  .sop-card-body {
+    display: none;
+    padding: 0 1.4rem 1.4rem;
+    border-top: 1px solid var(--sand);
+  }
+  .sop-card-body.open { display: block; }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin: 1.1rem 0 0.6rem;
+  }
+
+  /* STEPS */
+  .step-list { list-style: none; }
+  .step-list li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 8px 0; font-size: 14px; line-height: 1.6;
+    border-bottom: 1px solid #f0ece6;
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--sage-light); color: var(--sage);
+    font-size: 11px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .step-bullet {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+    color: var(--sage-mid); font-size: 18px; line-height: 1;
+  }
+
+  /* NOTE / WARNING BOXES */
+  .note-box {
+    background: var(--sage-light);
+    border-left: 3px solid var(--sage);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 12px 16px;
+    font-size: 13px; line-height: 1.6;
+    color: var(--sage-dark);
+    margin-top: 1rem;
+  }
+  .warning-box {
+    background: var(--warning-bg);
+    border-left: 3px solid var(--warning-border);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 12px 16px;
+    font-size: 13px; line-height: 1.6;
+    color: var(--warning-text);
+    margin-top: 1rem;
+  }
+
+  .role-badge {
+    font-size: 11px; padding: 3px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--sage-mid);
+    color: var(--sage); background: var(--sage-light);
+    font-weight: 400; margin-left: 8px;
+  }
+
+  .divider { height: 1px; background: var(--sand); margin: 1.25rem 0; }
+
+  /* FOOTER */
+  .site-footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--sand);
+  }
+
+  @media (max-width: 600px) {
+    .nav-btn { min-width: 90px; font-size: 12px; padding: 8px 10px; }
+    .container { padding: 1.25rem 1rem 3rem; }
+    .site-header { padding: 2rem 1.25rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Bloom Pilates Studio</div>
+  <h1>Standard Operating Procedures</h1>
+  <p>The definitive guide for how Bloom runs — every role, every process, every time.</p>
+  <div class="header-pills">
+    <span class="pill">Studio Software: Arketa</span>
+    <span class="pill">Updated: May 2025</span>
+    <span class="pill">Year 1 Operations</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <nav class="nav-bar" aria-label="SOP sections">
+    <button class="nav-btn active" onclick="showSection('overview')" id="nav-overview">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Overview
+    </button>
+    <button class="nav-btn" onclick="showSection('frontdesk')" id="nav-frontdesk">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Front Desk
+    </button>
+    <button class="nav-btn" onclick="showSection('instructors')" id="nav-instructors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Instructors
+    </button>
+    <button class="nav-btn" onclick="showSection('manager')" id="nav-manager">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Manager
+    </button>
+    <button class="nav-btn" onclick="showSection('owner')" id="nav-owner">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Owner
+    </button>
+  </nav>
+
+  <!-- ===== OVERVIEW ===== -->
+  <div class="section active" id="section-overview">
+    <div class="page-title">
+      <div class="title-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+      Operations Hub
+    </div>
+
+    <div class="quick-ref">
+      <div class="qr-item"><div class="qr-label">Studio software</div><div class="qr-val">Arketa</div></div>
+      <div class="qr-item"><div class="qr-label">Booking window</div><div class="qr-val">Set in Arketa</div></div>
+      <div class="qr-item"><div class="qr-label">Late cancel window</div><div class="qr-val">Define &amp; enforce</div></div>
+      <div class="qr-item"><div class="qr-label">Waitlist auto-enroll</div><div class="qr-val">Enabled in Arketa</div></div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Bloom Brand Standards</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <div class="section-label">Our vibe — always</div>
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Warm, not salesy. We welcome every client like a regular, even on day one.</div></li>
+          <li><div class="step-num">2</div><div>Professional, not clinical. Pilates is wellness — our tone is calm, confident, and encouraging.</div></li>
+          <li><div class="step-num">3</div><div>Clean, always. The studio must look and smell pristine before every class block.</div></li>
+          <li><div class="step-num">4</div><div>Consistent. Every client should receive the same experience regardless of who is working.</div></li>
+          <li><div class="step-num">5</div><div>Protective of the owner's time. Escalate only when truly necessary — handle what you can at your level first.</div></li>
+        </ul>
+        <div class="note-box">When in doubt: ask yourself "Would this make Andreaa proud to see?" If yes — do it. If uncertain — wait and ask.</div>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Escalation Policy — Who Handles What</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <div class="section-label">Level 1 — Front desk handles independently</div>
+        <ul class="step-list">
+          <li><div class="step-bullet">·</div><div>Check-ins, class changes, equipment questions, rescheduling within policy</div></li>
+          <li><div class="step-bullet">·</div><div>Standard cancellations and late fees within the cancellation window</div></li>
+          <li><div class="step-bullet">·</div><div>Retail sales, membership questions (info only — no overrides)</div></li>
+        </ul>
+        <div class="section-label">Level 2 — Manager handles</div>
+        <ul class="step-list">
+          <li><div class="step-bullet">·</div><div>Late fee waivers, refund requests, billing disputes</div></li>
+          <li><div class="step-bullet">·</div><div>Instructor schedule conflicts, class substitutions</div></li>
+          <li><div class="step-bullet">·</div><div>Client complaints beyond a simple apology</div></li>
+        </ul>
+        <div class="section-label">Level 3 — Escalate to Andreaa (owner)</div>
+        <ul class="step-list">
+          <li><div class="step-bullet">·</div><div>Any refund over $100 or full membership cancellation</div></li>
+          <li><div class="step-bullet">·</div><div>Safety incidents or injuries</div></li>
+          <li><div class="step-bullet">·</div><div>Media inquiries, partnership requests, legal matters</div></li>
+          <li><div class="step-bullet">·</div><div>Any situation where you are genuinely unsure — text, don't wait</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FRONT DESK ===== -->
+  <div class="section" id="section-frontdesk">
+    <div class="page-title">
+      <div class="title-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      Front Desk SOPs <span class="role-badge">Reception</span>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Opening the Studio</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <div class="section-label">Arrive 20 minutes before first class</div>
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Disarm alarm, turn on all lights, and adjust thermostat to studio standard.</div></li>
+          <li><div class="step-num">2</div><div>Walk the entire studio — check reformers, mats, props for cleanliness and alignment. Wipe down any equipment from the night before.</div></li>
+          <li><div class="step-num">3</div><div>Check restrooms: restock paper, soap, empty trash if needed.</div></li>
+          <li><div class="step-num">4</div><div>Open Arketa on the front desk device. Review the day's schedule, class sizes, and any notes flagged from the previous shift.</div></li>
+          <li><div class="step-num">5</div><div>Check the waitlist in Arketa — confirm auto-enroll worked correctly. Manually contact waitlisted clients if a spot opened after the notification window.</div></li>
+          <li><div class="step-num">6</div><div>Prepare the check-in area: tissues, pens, sign-in sheet (if used as backup), and any retail display.</div></li>
+          <li><div class="step-num">7</div><div>Unlock the front door exactly 15 minutes before the first class start time — not before.</div></li>
+        </ul>
+        <div class="note-box">If you arrive and something is broken, damaged, or unsafe — do not open. Text the manager and owner immediately.</div>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Client Check-In</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <div class="section-label">Every client, every time</div>
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Greet by name when possible. "Hi [name], welcome back!" for returning clients. "Welcome to Bloom!" for new clients.</div></li>
+          <li><div class="step-num">2</div><div>Check them in on Arketa immediately — never let clients check themselves in unless a self-serve kiosk is set up.</div></li>
+          <li><div class="step-num">3</div><div>For new clients: have them complete the waiver in Arketa (digital). Do not allow them in the studio without a completed waiver.</div></li>
+          <li><div class="step-num">4</div><div>For new clients: give a 60-second orientation — where to store shoes/bags, where equipment is, intro to the instructor.</div></li>
+          <li><div class="step-num">5</div><div>If a client walks in without a reservation, check Arketa for open spots. If class is full, offer the waitlist or the next available class.</div></li>
+          <li><div class="step-num">6</div><div>If a client's membership is expired or has no credits — let them know warmly, offer to purchase on the spot. Do not let them take class without valid booking or payment.</div></li>
+        </ul>
+        <div class="warning-box">Never tell a client "don't worry about it" and wave them through without a booking. Every client in the room must be accounted for in Arketa.</div>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.44 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.4a16 16 0 0 0 5.66 5.66l.79-.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Phone, Email &amp; DM Inquiries</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Answer all calls within 3 rings. Greet: "Thank you for calling Bloom Pilates, this is [your name], how can I help you?"</div></li>
+          <li><div class="step-num">2</div><div>Respond to emails and DMs within 2 business hours during studio operating hours.</div></li>
+          <li><div class="step-num">3</div><div>For new client inquiries: gather their name, what they're looking for, and their schedule. Offer to book a trial class directly in Arketa while on the call.</div></li>
+          <li><div class="step-num">4</div><div>Pricing questions: direct to the pricing page or provide the current rate card. Do not offer undocumented discounts.</div></li>
+          <li><div class="step-num">5</div><div>If you don't know the answer — say "Let me find that out for you and follow up shortly" and get back to them within 1 hour.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Closing the Studio</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Confirm all clients have exited the studio floor.</div></li>
+          <li><div class="step-num">2</div><div>Wipe down all reformers, mats, rings, and blocks with approved disinfectant spray.</div></li>
+          <li><div class="step-num">3</div><div>Reset all equipment to starting position — straps, footbars, springs to neutral.</div></li>
+          <li><div class="step-num">4</div><div>Check restrooms — wipe surfaces, restock, empty trash if over halfway full.</div></li>
+          <li><div class="step-num">5</div><div>Lock front door. Turn off all lights except any required security lighting.</div></li>
+          <li><div class="step-num">6</div><div>Set the alarm and confirm it is armed before leaving.</div></li>
+          <li><div class="step-num">7</div><div>Log any incidents, complaints, or follow-up items in the shift notes.</div></li>
+        </ul>
+        <div class="note-box">The last person to leave is responsible for the close checklist — even if an instructor is still there. Do not assume someone else handled it.</div>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Payments &amp; Memberships</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>All transactions are processed through Arketa. Do not accept cash unless a cash policy is defined by ownership.</div></li>
+          <li><div class="step-num">2</div><div>When selling memberships or class packs, always confirm the correct product is selected in Arketa before processing payment.</div></li>
+          <li><div class="step-num">3</div><div>If a payment fails — inform the client privately. Offer to update the card in Arketa. Do not allow repeated failed payments to accumulate.</div></li>
+          <li><div class="step-num">4</div><div>Refund requests: log them. Do not process without manager or owner approval.</div></li>
+          <li><div class="step-num">5</div><div>End-of-day: confirm daily sales total in Arketa matches expected transactions. Flag any discrepancies to the manager.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== INSTRUCTORS ===== -->
+  <div class="section" id="section-instructors">
+    <div class="page-title">
+      <div class="title-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      Instructor SOPs <span class="role-badge">Teaching Staff</span>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Before Class</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Arrive minimum 15 minutes before class start time — no exceptions. If you will be late, notify the manager immediately.</div></li>
+          <li><div class="step-num">2</div><div>Review the class roster in Arketa: note new clients, returning clients with injuries on file, and class size.</div></li>
+          <li><div class="step-num">3</div><div>Set up the studio for your class format — springs, footbars, props positioned and ready before clients enter.</div></li>
+          <li><div class="step-num">4</div><div>Prepare your playlist or confirm audio is working. Silence your personal phone.</div></li>
+          <li><div class="step-num">5</div><div>Greet clients as they arrive. For new clients, introduce yourself and ask about any injuries or limitations before class begins.</div></li>
+        </ul>
+        <div class="note-box">Know your roster. If you see a new name you don't recognize, verify they're checked in and have completed their waiver before class starts.</div>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> During Class — Standards</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Start class no more than 2 minutes after scheduled time — out of respect for clients who were punctual.</div></li>
+          <li><div class="step-num">2</div><div>Do a full verbal health check at the start: "Any injuries or areas of concern today? This is your time to let me know."</div></li>
+          <li><div class="step-num">3</div><div>Offer modifications for every exercise. No client should ever feel unable to participate.</div></li>
+          <li><div class="step-num">4</div><div>Do not use your phone during class for any reason other than a genuine emergency.</div></li>
+          <li><div class="step-num">5</div><div>Maintain professional boundaries — compliments are encouraged; personal conversations should happen before or after class, not during instruction.</div></li>
+          <li><div class="step-num">6</div><div>If a client appears to be in pain or discomfort — stop. Check in with them. If there is any concern about injury, they stop exercising that day.</div></li>
+          <li><div class="step-num">7</div><div>End class on time. If running short, skip extra content — never run over into the next class's setup window.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> After Class</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Stay in the studio for at least 5 minutes post-class to answer questions and connect with clients.</div></li>
+          <li><div class="step-num">2</div><div>Assist in wiping down equipment if front desk is not yet present — Bloom's clean studio is everyone's responsibility.</div></li>
+          <li><div class="step-num">3</div><div>Return all props and springs to neutral/storage position.</div></li>
+          <li><div class="step-num">4</div><div>Log any client concerns, injuries observed, or incidents into the shift notes or directly to the manager.</div></li>
+          <li><div class="step-num">5</div><div>If a client mentioned an injury or expressed frustration — flag it to the manager immediately, do not wait until next shift.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Schedule, Subs &amp; Absences</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>You are responsible for your scheduled classes. If you cannot teach, you are responsible for finding a qualified sub — notify the manager simultaneously.</div></li>
+          <li><div class="step-num">2</div><div>Sub requests must be submitted minimum 48 hours in advance for non-emergencies.</div></li>
+          <li><div class="step-num">3</div><div>Emergency absences (illness, accident): notify the manager by text immediately — do not wait for a call back.</div></li>
+          <li><div class="step-num">4</div><div>All subs must be approved by the manager or owner before being confirmed to clients.</div></li>
+          <li><div class="step-num">5</div><div>Do not communicate your absence directly to clients on social media. All client communications go through official Bloom channels.</div></li>
+        </ul>
+        <div class="warning-box">A class without an instructor is never acceptable. It is your professional responsibility to ensure coverage before you are absent.</div>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Injury &amp; Emergency Protocol</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>If a client is injured during class — stop class immediately. Assess calmly. Do not minimize or dismiss what the client reports.</div></li>
+          <li><div class="step-num">2</div><div>If injury appears serious — call 911 first. Then notify the manager or owner.</div></li>
+          <li><div class="step-num">3</div><div>Know where the first aid kit is located at all times.</div></li>
+          <li><div class="step-num">4</div><div>Document every incident in writing that day — what happened, who was present, what was said, what action was taken. This is legally important.</div></li>
+          <li><div class="step-num">5</div><div>Do not post about any incident on social media. Do not discuss it with other clients. All communications go through the owner.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MANAGER ===== -->
+  <div class="section" id="section-manager">
+    <div class="page-title">
+      <div class="title-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      Studio Manager SOPs <span class="role-badge">Management</span>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Weekly Operational Checklist</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <div class="section-label">Monday — set the week</div>
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Review Arketa schedule for the full week — confirm all classes have instructors assigned and no gaps.</div></li>
+          <li><div class="step-num">2</div><div>Check for clients with expiring memberships or packages this week — flag for front desk to mention at check-in.</div></li>
+          <li><div class="step-num">3</div><div>Review last week's shift notes — follow up on any unresolved client issues or incidents.</div></li>
+        </ul>
+        <div class="section-label">Ongoing — throughout the week</div>
+        <ul class="step-list">
+          <li><div class="step-num">4</div><div>Monitor class fill rates in Arketa. Classes under 30% full 24 hours before — notify owner and consider a push notification or waitlist check.</div></li>
+          <li><div class="step-num">5</div><div>Handle all Level 2 escalations within 2 hours of being notified.</div></li>
+          <li><div class="step-num">6</div><div>Ensure studio is fully stocked: cleaning supplies, paper products, retail items.</div></li>
+        </ul>
+        <div class="section-label">Friday — close the week</div>
+        <ul class="step-list">
+          <li><div class="step-num">7</div><div>Send weekly summary to owner: attendance numbers, revenue snapshot from Arketa, any incidents, and one highlight.</div></li>
+          <li><div class="step-num">8</div><div>Confirm weekend staffing is locked in and all subs are confirmed.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Refunds, Waivers &amp; Billing</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Late cancel fee waivers: you may waive up to one per client per membership term, at your discretion, for documented extenuating circumstances.</div></li>
+          <li><div class="step-num">2</div><div>Refund requests under $100: you may approve after reviewing the account history in Arketa and confirming the client's standing.</div></li>
+          <li><div class="step-num">3</div><div>Refund requests over $100: document and escalate to owner within 24 hours.</div></li>
+          <li><div class="step-num">4</div><div>All refunds must be processed through Arketa — never issue cash or informal credits.</div></li>
+          <li><div class="step-num">5</div><div>Any client requesting to cancel their membership: collect their reason, log it, and notify the owner before processing cancellation.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Staff Management</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Maintain a master staff availability sheet — updated at least twice per month.</div></li>
+          <li><div class="step-num">2</div><div>Conduct informal 1:1 check-ins with each staff member at least twice per month — 10 minutes is enough. Log any concerns.</div></li>
+          <li><div class="step-num">3</div><div>If a staff member is consistently late, violating SOPs, or receiving client complaints — document in writing and notify owner before addressing directly.</div></li>
+          <li><div class="step-num">4</div><div>New hire onboarding: every new hire must shadow at least 2 full shifts and review this SOP document before being left unsupervised.</div></li>
+          <li><div class="step-num">5</div><div>Scheduling changes: confirm 2 weeks out minimum, 4 weeks preferred. Communicate changes to affected staff in writing.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Client Experience &amp; Retention</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Every new client who completes their first class should receive a follow-up — email or text within 24 hours via Arketa's automated messaging or manually.</div></li>
+          <li><div class="step-num">2</div><div>Clients who haven't booked in 3+ weeks: flag in Arketa as "at-risk." Ensure a re-engagement message goes out.</div></li>
+          <li><div class="step-num">3</div><div>Respond to all Google Reviews and social comments within 48 hours — professional, warm, and never defensive.</div></li>
+          <li><div class="step-num">4</div><div>Collect client feedback quarterly — even a simple 3-question survey sent through Arketa counts.</div></li>
+          <li><div class="step-num">5</div><div>Note birthdays in client profiles — a personal happy birthday note from Bloom goes a long way.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== OWNER ===== -->
+  <div class="section" id="section-owner">
+    <div class="page-title">
+      <div class="title-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      Owner SOPs <span class="role-badge">Andreaa</span>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Monthly Business Review</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <div class="section-label">Pull from Arketa reports on the 1st of each month</div>
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Total revenue vs. prior month and vs. goal. Identify the gap — no guessing, look at the numbers.</div></li>
+          <li><div class="step-num">2</div><div>Total active memberships and class packs. New clients added vs. clients lost (churn). This is your pulse.</div></li>
+          <li><div class="step-num">3</div><div>Class fill rate by class type. If a class is consistently under 40% full, it needs to be repositioned, promoted harder, or cut.</div></li>
+          <li><div class="step-num">4</div><div>Top 10 clients by visit frequency — these are your VIPs. Know them. Protect them.</div></li>
+          <li><div class="step-num">5</div><div>Review all refunds issued that month. Patterns in refund reasons = operational or product problems.</div></li>
+          <li><div class="step-num">6</div><div>Set 3 priorities for the coming month — written down, shared with manager.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Financial Oversight</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Review Arketa revenue reports weekly — takes 10 minutes. You should always know where you are vs. goal.</div></li>
+          <li><div class="step-num">2</div><div>Reconcile Arketa sales with your bank account monthly. Flag any discrepancies immediately.</div></li>
+          <li><div class="step-num">3</div><div>Know your fixed costs monthly: rent, payroll, software, insurance. That is your floor. Everything above it is how you build toward freedom.</div></li>
+          <li><div class="step-num">4</div><div>Any expense over $200 that is not routine: you approve it personally before it is incurred.</div></li>
+          <li><div class="step-num">5</div><div>Payroll: confirm all instructor hours and any commission structures are documented in writing before each pay period.</div></li>
+        </ul>
+        <div class="note-box">Financial freedom starts with knowing your numbers cold. No one should know this business's finances better than you.</div>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg> Growth &amp; Marketing</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Quarterly: evaluate which membership tiers are selling and which aren't. Pricing should be revisited at minimum every 6 months.</div></li>
+          <li><div class="step-num">2</div><div>Monthly: plan at least one promotional event, intro offer, or community-building activation. Bloom is in year 1 — growth requires consistent nurturing.</div></li>
+          <li><div class="step-num">3</div><div>All public-facing promotions and pricing changes must come from you or be explicitly approved by you before going live.</div></li>
+          <li><div class="step-num">4</div><div>Partnerships: vet any potential partner before committing. Bloom's brand must be protected — align only with businesses that share your values.</div></li>
+          <li><div class="step-num">5</div><div>Quarterly Google Business Profile audit — ensure hours, photos, and information are accurate.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-card-header" onclick="toggleCard(this)">
+        <div class="card-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Legal &amp; Compliance</div>
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="sop-card-body">
+        <ul class="step-list">
+          <li><div class="step-num">1</div><div>Ensure all client waivers are current, signed, and stored in Arketa. Audit this quarterly.</div></li>
+          <li><div class="step-num">2</div><div>Confirm business insurance is active and adequate — covers liability, equipment, and employee injuries. Annual review minimum.</div></li>
+          <li><div class="step-num">3</div><div>Instructor certifications: maintain a copy on file for every teaching staff member. Calendar renewal dates so you're never caught with an uncertified instructor.</div></li>
+          <li><div class="step-num">4</div><div>Any incident involving injury: document fully within 24 hours. Retain documentation. Know when to escalate to an attorney.</div></li>
+          <li><div class="step-num">5</div><div>Review all contractor vs. employee classifications annually — this is a real legal risk area in the fitness industry.</div></li>
+        </ul>
+        <div class="note-box">Your law background is a genuine asset here. Use it — and know when the matter is beyond your current knowledge and call in a professional.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    Bloom Pilates · Internal Operations Document · Updated May 2025
+  </footer>
+
+</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('section-' + id).classList.add('active');
+    document.getElementById('nav-' + id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function toggleCard(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    header.classList.toggle('open', !isOpen);
+    body.classList.toggle('open', !isOpen);
+  }
+</script>
+</body>
+</html>
