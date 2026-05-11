@@ -1,5 +1,4 @@
-
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -27,7 +26,6 @@
     min-height: 100vh;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -42,597 +40,97 @@
     justify-content: space-between;
   }
 
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-wordmark { font-size: 12px; letter-spacing: 0.35em; text-transform: uppercase; font-weight: 300; color: var(--black); }
 
-  .nav-wordmark {
-    font-size: 12px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: var(--black);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: var(--gray);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400; color: var(--gray); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* MAIN */
-  main {
-    padding-top: 56px;
-    max-width: 860px;
-    margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+  main { padding-top: 56px; max-width: 860px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 
-  /* PAGE BLOCKS */
-  .page {
-    background: var(--white);
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
-    margin: 32px 0;
-    overflow: hidden;
-  }
+  .page { background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; margin: 32px 0; overflow: hidden; }
 
-  /* COVER PAGE */
-  .cover {
-    min-height: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 60px;
-    position: relative;
-  }
+  .cover { min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 60px; position: relative; }
+  .cover::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gold); }
 
-  .cover::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: var(--gold);
-  }
+  .divider { width: 48px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
+  .cover-title { font-size: 11px; font-weight: 600; letter-spacing: 0.38em; text-transform: uppercase; color: var(--black); margin-bottom: 12px; }
+  .cover-subtitle { font-size: 13px; font-weight: 300; color: var(--gray); line-height: 1.8; margin-bottom: 48px; letter-spacing: 0.04em; }
 
-  .cover-logo {
-    margin-bottom: 48px;
-  }
+  .meta-pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+  .pill { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400; color: var(--gold); border: 0.5px solid var(--gold); padding: 7px 18px; border-radius: 40px; }
+  .cover-confidential { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: #bbb; font-weight: 300; }
 
-  .cover-logo svg {
-    width: 280px;
-    height: auto;
-  }
-
-  .divider {
-    width: 48px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 32px;
-  }
-
-  .cover-title {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.38em;
-    text-transform: uppercase;
-    color: var(--black);
-    margin-bottom: 12px;
-  }
-
-  .cover-subtitle {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--gray);
-    line-height: 1.8;
-    margin-bottom: 48px;
-    letter-spacing: 0.04em;
-  }
-
-  .meta-pills {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 48px;
-  }
-
-  .pill {
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: var(--gold);
-    border: 0.5px solid var(--gold);
-    padding: 7px 18px;
-    border-radius: 40px;
-  }
-
-  .cover-confidential {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #bbb;
-    font-weight: 300;
-  }
-
-  /* TOC */
-  .toc {
-    padding: 48px 56px;
-  }
-
-  .toc-header {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .toc-title {
-    font-size: 9px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-  }
-
-  .toc-line {
-    flex: 1;
-    height: 0.5px;
-    background: var(--border);
-  }
-
-  .toc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .toc-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 16px;
-    border: 0.5px solid var(--border);
-    border-radius: 8px;
-    text-decoration: none;
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .toc-item:hover {
-    border-color: var(--gold);
-    background: var(--gold-light);
-  }
-
-  .toc-num {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.15em;
-    min-width: 24px;
-  }
-
-  .toc-label {
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--black);
-    letter-spacing: 0.04em;
-  }
-
-  .toc-arrow {
-    margin-left: auto;
-    color: var(--border);
-    font-size: 14px;
-    transition: color 0.2s;
-  }
-
+  .toc { padding: 48px 56px; }
+  .toc-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; }
+  .toc-title { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .toc-line { flex: 1; height: 0.5px; background: var(--border); }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 0.5px solid var(--border); border-radius: 8px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+  .toc-item:hover { border-color: var(--gold); background: var(--gold-light); }
+  .toc-num { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 0.15em; min-width: 24px; }
+  .toc-label { font-size: 12px; font-weight: 300; color: var(--black); letter-spacing: 0.04em; }
+  .toc-arrow { margin-left: auto; color: var(--border); font-size: 14px; transition: color 0.2s; }
   .toc-item:hover .toc-arrow { color: var(--gold); }
 
-  /* SECTION PAGES */
-  .section-header {
-    padding: 40px 56px 32px;
-    border-bottom: 0.5px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  .section-header { padding: 40px 56px 32px; border-bottom: 0.5px solid var(--border); }
+  .section-eyebrow { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+  .section-title { font-size: 22px; font-weight: 200; color: var(--black); letter-spacing: 0.06em; }
+  .section-body { padding: 40px 56px; }
 
-  .section-eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-
-  .section-title {
-    font-size: 22px;
-    font-weight: 200;
-    color: var(--black);
-    letter-spacing: 0.06em;
-  }
-
-  .section-icon svg {
-    width: 36px;
-    height: 36px;
-    opacity: 0.25;
-  }
-
-  .section-body {
-    padding: 40px 56px;
-  }
-
-  /* BRAND STANDARDS */
-  .brand-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .brand-card {
-    border: 0.5px solid var(--border);
-    border-radius: 8px;
-    padding: 18px 20px;
-    background: var(--white);
-    transition: border-color 0.2s;
-  }
-
+  .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .brand-card { border: 0.5px solid var(--border); border-radius: 8px; padding: 18px 20px; background: var(--white); transition: border-color 0.2s; }
   .brand-card:hover { border-color: var(--gold); }
+  .brand-num { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 8px; }
+  .brand-label { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+  .brand-text { font-size: 12px; font-weight: 300; line-height: 1.65; color: var(--gray); }
 
-  .brand-num {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
+  .mantra-box { border-left: 2px solid var(--gold); padding: 16px 22px; background: var(--gold-light); border-radius: 0 8px 8px 0; margin-top: 12px; }
+  .mantra-text { font-size: 13px; font-weight: 300; font-style: italic; color: var(--black); line-height: 1.75; }
 
-  .brand-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--black);
-    margin-bottom: 4px;
-  }
-
-  .brand-text {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.65;
-    color: var(--gray);
-  }
-
-  .mantra-box {
-    border-left: 2px solid var(--gold);
-    padding: 16px 22px;
-    background: var(--gold-light);
-    border-radius: 0 8px 8px 0;
-    margin-top: 12px;
-  }
-
-  .mantra-text {
-    font-size: 13px;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--black);
-    line-height: 1.75;
-  }
-
-  /* ESCALATION */
-  .escalation-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-  }
-
-  .escalation-card {
-    border: 0.5px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .escalation-head {
-    padding: 12px 16px;
-    background: var(--light-gray);
-    border-bottom: 0.5px solid var(--border);
-  }
-
-  .escalation-level {
-    font-size: 9px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  .escalation-role {
-    font-size: 13px;
-    color: var(--black);
-    font-weight: 300;
-    letter-spacing: 0.04em;
-  }
-
+  .escalation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .escalation-card { border: 0.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .escalation-head { padding: 12px 16px; background: var(--light-gray); border-bottom: 0.5px solid var(--border); }
+  .escalation-level { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+  .escalation-role { font-size: 13px; color: var(--black); font-weight: 300; letter-spacing: 0.04em; }
   .escalation-body { padding: 12px 16px; }
-
-  .esc-item {
-    font-size: 11px;
-    font-weight: 300;
-    color: var(--gray);
-    line-height: 1.5;
-    padding: 5px 0;
-    border-bottom: 0.5px solid var(--border);
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
+  .esc-item { font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.5; padding: 5px 0; border-bottom: 0.5px solid var(--border); display: flex; align-items: flex-start; gap: 8px; }
   .esc-item:last-child { border-bottom: none; }
+  .esc-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 5px; }
 
-  .esc-dot {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--gold);
-    flex-shrink: 0;
-    margin-top: 5px;
-  }
-
-  /* STEP LISTS */
-  .subsection {
-    margin-bottom: 36px;
-  }
-
+  .subsection { margin-bottom: 36px; }
   .subsection:last-child { margin-bottom: 0; }
+  .subsection-title { font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--black); margin-bottom: 4px; }
+  .subsection-note { font-size: 11px; font-weight: 300; color: var(--gray); margin-bottom: 16px; }
 
-  .subsection-title {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--black);
-    margin-bottom: 4px;
-  }
-
-  .subsection-note {
-    font-size: 11px;
-    font-weight: 300;
-    color: var(--gray);
-    margin-bottom: 16px;
-    letter-spacing: 0.02em;
-  }
-
-  .step-list {
-    list-style: none;
-    counter-reset: steps;
-  }
-
-  .step-list li {
-    counter-increment: steps;
-    display: flex;
-    gap: 14px;
-    padding: 10px 0;
-    border-bottom: 0.5px solid var(--border);
-    font-size: 12.5px;
-    font-weight: 300;
-    line-height: 1.65;
-    color: var(--black);
-    align-items: flex-start;
-  }
-
+  .step-list { list-style: none; counter-reset: steps; }
+  .step-list li { counter-increment: steps; display: flex; gap: 14px; padding: 10px 0; border-bottom: 0.5px solid var(--border); font-size: 12.5px; font-weight: 300; line-height: 1.65; color: var(--black); align-items: flex-start; }
   .step-list li:last-child { border-bottom: none; }
+  .step-list li::before { content: counter(steps, decimal-leading-zero); font-size: 10px; font-weight: 600; color: var(--gold); letter-spacing: 0.1em; min-width: 22px; margin-top: 2px; }
 
-  .step-list li::before {
-    content: counter(steps, decimal-leading-zero);
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    min-width: 22px;
-    margin-top: 2px;
-  }
+  .alert-box { background: var(--light-gray); border-left: 2px solid var(--black); padding: 12px 18px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 11.5px; font-weight: 400; color: var(--black); line-height: 1.65; font-style: italic; }
 
-  .alert-box {
-    background: var(--light-gray);
-    border-left: 2px solid var(--black);
-    padding: 12px 18px;
-    border-radius: 0 8px 8px 0;
-    margin-top: 16px;
-    font-size: 11.5px;
-    font-weight: 400;
-    color: var(--black);
-    line-height: 1.65;
-    font-style: italic;
-  }
+  .sub-divider { height: 0.5px; background: var(--border); margin: 32px 0; }
 
-  /* DIVIDER BETWEEN SUBSECTIONS */
-  .sub-divider {
-    height: 0.5px;
-    background: var(--border);
-    margin: 32px 0;
-  }
+  .page-footer { padding: 16px 56px; border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--light-gray); }
+  .footer-text { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #bbb; font-weight: 300; }
+  .footer-brand-text { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray); font-weight: 300; }
 
-  /* PAGE FOOTER */
-  .page-footer {
-    padding: 16px 56px;
-    border-top: 0.5px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--light-gray);
-  }
+  .page-top-bar { padding: 16px 56px; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .page-top-logo { display: flex; align-items: center; gap: 8px; }
+  .page-top-name { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 300; color: var(--black); }
+  .page-top-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gray); font-weight: 300; }
 
-  .footer-text {
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #bbb;
-    font-weight: 300;
-  }
-
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-
-  .footer-brand-text {
-    font-size: 9px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gray);
-    font-weight: 300;
-  }
-
-  /* PAGE INTERNAL HEADER (for inner pages) */
-  .page-top-bar {
-    padding: 16px 56px;
-    border-bottom: 0.5px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--white);
-  }
-
-  .page-top-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .page-top-name {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: var(--black);
-  }
-
-  .page-top-label {
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gray);
-    font-weight: 300;
-  }
-
-  /* CHECKLIST */
-  .check-list {
-    list-style: none;
-  }
-
-  .check-list li {
-    display: flex;
-    gap: 12px;
-    padding: 9px 0;
-    border-bottom: 0.5px solid var(--border);
-    font-size: 12.5px;
-    font-weight: 300;
-    line-height: 1.6;
-    color: var(--black);
-    align-items: flex-start;
-  }
-
-  .check-list li:last-child { border-bottom: none; }
-
-  .check-box {
-    width: 14px;
-    height: 14px;
-    border: 0.5px solid var(--border);
-    border-radius: 3px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  /* WEEKLY GRID */
-  .week-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-  }
-
-  .week-card {
-    border: 0.5px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .week-head {
-    padding: 10px 14px;
-    background: var(--light-gray);
-    border-bottom: 0.5px solid var(--border);
-    font-size: 9px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-  }
-
+  .week-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .week-card { border: 0.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .week-head { padding: 10px 14px; background: var(--light-gray); border-bottom: 0.5px solid var(--border); font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
   .week-body { padding: 12px 14px; }
-
-  .week-item {
-    font-size: 11px;
-    font-weight: 300;
-    color: var(--gray);
-    padding: 5px 0;
-    border-bottom: 0.5px solid var(--border);
-    display: flex;
-    gap: 8px;
-    line-height: 1.5;
-  }
-
+  .week-item { font-size: 11px; font-weight: 300; color: var(--gray); padding: 5px 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 8px; line-height: 1.5; }
   .week-item:last-child { border-bottom: none; }
 
-  /* METRIC CARDS */
-  .metric-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 28px;
-  }
+  .flower { display: inline-block; }
 
-  .metric-card {
-    background: var(--light-gray);
-    border-radius: 8px;
-    padding: 16px 18px;
-  }
-
-  .metric-label {
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gray);
-    font-weight: 400;
-    margin-bottom: 8px;
-  }
-
-  .metric-value {
-    font-size: 18px;
-    font-weight: 200;
-    color: var(--gold);
-    letter-spacing: 0.06em;
-  }
-
-  /* RESPONSIVE */
   @media (max-width: 640px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
@@ -647,14 +145,11 @@
     .brand-grid { grid-template-columns: 1fr; }
     .escalation-grid { grid-template-columns: 1fr; }
     .week-grid { grid-template-columns: 1fr; }
-    .metric-grid { grid-template-columns: 1fr 1fr; }
-    .cover-logo svg { width: 200px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#cover" class="nav-logo">
     <svg width="20" height="20" viewBox="0 0 36 36" fill="none">
@@ -681,15 +176,11 @@
 
 <main>
 
-  <!-- COVER -->
   <div class="page cover" id="cover">
-    <div class="cover-logo">
-      <svg viewBox="0 0 340 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- B -->
+    <div style="margin-bottom: 48px;">
+      <svg viewBox="0 0 340 130" width="280" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="2" y="92" font-family="'Nunito Sans', sans-serif" font-weight="200" font-size="96" fill="#1a1a1a">B</text>
-        <!-- L -->
         <text x="67" y="92" font-family="'Nunito Sans', sans-serif" font-weight="200" font-size="96" fill="#1a1a1a">L</text>
-        <!-- Sunflower replacing OO -->
         <g transform="translate(168,48)">
           <ellipse cx="0" cy="-24" rx="6" ry="10" fill="none" stroke="#E8A020" stroke-width="2"/>
           <ellipse cx="0" cy="-24" rx="6" ry="10" fill="none" stroke="#E8A020" stroke-width="2" transform="rotate(22.5)"/>
@@ -709,15 +200,11 @@
           <ellipse cx="0" cy="-24" rx="6" ry="10" fill="none" stroke="#E8A020" stroke-width="2" transform="rotate(337.5)"/>
           <circle cx="0" cy="0" r="14" fill="none" stroke="#E8A020" stroke-width="2"/>
         </g>
-        <!-- O -->
         <text x="214" y="92" font-family="'Nunito Sans', sans-serif" font-weight="200" font-size="96" fill="#1a1a1a">O</text>
-        <!-- M -->
         <text x="272" y="92" font-family="'Nunito Sans', sans-serif" font-weight="200" font-size="96" fill="#1a1a1a">M</text>
-        <!-- PILATES -->
         <text x="170" y="122" font-family="'Nunito Sans', sans-serif" font-weight="300" font-size="18" fill="#1a1a1a" letter-spacing="16" text-anchor="middle">PILATES</text>
       </svg>
     </div>
-
     <div class="divider"></div>
     <div class="cover-title">Standard Operating Procedures</div>
     <div class="cover-subtitle">The definitive guide to how Bloom runs —<br>every role, every process, every time.</div>
@@ -729,7 +216,6 @@
     <div class="cover-confidential">Internal Document · Confidential</div>
   </div>
 
-  <!-- TABLE OF CONTENTS -->
   <div class="page" id="toc">
     <div class="toc">
       <div class="toc-header">
@@ -737,105 +223,48 @@
         <div class="toc-line"></div>
       </div>
       <div class="toc-grid">
-        <a href="#brand" class="toc-item">
-          <span class="toc-num">01</span>
-          <span class="toc-label">Brand Standards & Escalation</span>
-          <span class="toc-arrow">→</span>
-        </a>
-        <a href="#front-desk" class="toc-item">
-          <span class="toc-num">02</span>
-          <span class="toc-label">Front Desk SOPs</span>
-          <span class="toc-arrow">→</span>
-        </a>
-        <a href="#instructors" class="toc-item">
-          <span class="toc-num">03</span>
-          <span class="toc-label">Instructor SOPs</span>
-          <span class="toc-arrow">→</span>
-        </a>
-        <a href="#manager" class="toc-item">
-          <span class="toc-num">04</span>
-          <span class="toc-label">Studio Manager SOPs</span>
-          <span class="toc-arrow">→</span>
-        </a>
-        <a href="#owner" class="toc-item">
-          <span class="toc-num">05</span>
-          <span class="toc-label">Owner SOPs — Andreaa</span>
-          <span class="toc-arrow">→</span>
-        </a>
+        <a href="#brand" class="toc-item"><span class="toc-num">01</span><span class="toc-label">Brand Standards & Escalation</span><span class="toc-arrow">→</span></a>
+        <a href="#front-desk" class="toc-item"><span class="toc-num">02</span><span class="toc-label">Front Desk SOPs</span><span class="toc-arrow">→</span></a>
+        <a href="#instructors" class="toc-item"><span class="toc-num">03</span><span class="toc-label">Instructor SOPs</span><span class="toc-arrow">→</span></a>
+        <a href="#manager" class="toc-item"><span class="toc-num">04</span><span class="toc-label">Studio Manager SOPs</span><span class="toc-arrow">→</span></a>
+        <a href="#owner" class="toc-item"><span class="toc-num">05</span><span class="toc-label">Owner SOPs — Andreaa</span><span class="toc-arrow">→</span></a>
       </div>
     </div>
   </div>
 
-  <!-- BRAND STANDARDS -->
   <div class="page" id="brand">
     <div class="page-top-bar">
       <div class="page-top-logo">
         <svg width="16" height="16" viewBox="0 0 36 36" fill="none">
           <ellipse cx="18" cy="18" rx="4" ry="4" fill="none" stroke="#E8A020" stroke-width="1.4"/>
           <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4"/>
-          <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(45 18 18)"/>
           <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(90 18 18)"/>
-          <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(135 18 18)"/>
           <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(180 18 18)"/>
-          <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(225 18 18)"/>
           <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(270 18 18)"/>
-          <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(315 18 18)"/>
         </svg>
         <span class="page-top-name">Bloom Pilates</span>
       </div>
       <span class="page-top-label">Brand Standards & Escalation Policy</span>
     </div>
-
     <div class="section-header">
-      <div>
-        <div class="section-eyebrow">Our vibe — always</div>
-        <div class="section-title">Bloom Brand Standards</div>
-      </div>
+      <div class="section-eyebrow">Our vibe — always</div>
+      <div class="section-title">Bloom Brand Standards</div>
     </div>
-
     <div class="section-body">
       <div class="brand-grid">
-        <div class="brand-card">
-          <div class="brand-num">01</div>
-          <div class="brand-label">Warm, not salesy</div>
-          <div class="brand-text">We welcome every client like a regular — even on day one.</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-num">02</div>
-          <div class="brand-label">Professional, not clinical</div>
-          <div class="brand-text">Pilates is wellness. Our tone is calm, confident, and encouraging.</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-num">03</div>
-          <div class="brand-label">Clean, always</div>
-          <div class="brand-text">The studio must look and smell pristine before every class block.</div>
-        </div>
-        <div class="brand-card">
-          <div class="brand-num">04</div>
-          <div class="brand-label">Consistent</div>
-          <div class="brand-text">Every client receives the same experience regardless of who is working.</div>
-        </div>
+        <div class="brand-card"><div class="brand-num">01</div><div class="brand-label">Warm, not salesy</div><div class="brand-text">We welcome every client like a regular — even on day one.</div></div>
+        <div class="brand-card"><div class="brand-num">02</div><div class="brand-label">Professional, not clinical</div><div class="brand-text">Pilates is wellness. Our tone is calm, confident, and encouraging.</div></div>
+        <div class="brand-card"><div class="brand-num">03</div><div class="brand-label">Clean, always</div><div class="brand-text">The studio must look and smell pristine before every class block.</div></div>
+        <div class="brand-card"><div class="brand-num">04</div><div class="brand-label">Consistent</div><div class="brand-text">Every client receives the same experience regardless of who is working.</div></div>
       </div>
-      <div class="brand-card" style="margin-bottom: 0;">
-        <div class="brand-num">05</div>
-        <div class="brand-label">Protective of the owner's time</div>
-        <div class="brand-text">Escalate only when truly necessary — handle what you can at your level first.</div>
-      </div>
-      <div class="mantra-box">
-        <div class="mantra-text">"When in doubt: ask yourself — would this make Andreaa proud to see? If yes, do it. If uncertain, wait and ask."</div>
-      </div>
-
+      <div class="brand-card"><div class="brand-num">05</div><div class="brand-label">Protective of the owner's time</div><div class="brand-text">Escalate only when truly necessary — handle what you can at your level first.</div></div>
+      <div class="mantra-box"><div class="mantra-text">"When in doubt: ask yourself — would this make Andreaa proud to see? If yes, do it. If uncertain, wait and ask."</div></div>
       <div class="sub-divider"></div>
-
       <div class="section-eyebrow">Who handles what</div>
       <div class="section-title" style="margin-bottom: 20px;">Escalation Policy</div>
-
       <div class="escalation-grid">
         <div class="escalation-card">
-          <div class="escalation-head">
-            <div class="escalation-level">Level 01</div>
-            <div class="escalation-role">Front Desk</div>
-          </div>
+          <div class="escalation-head"><div class="escalation-level">Level 01</div><div class="escalation-role">Front Desk</div></div>
           <div class="escalation-body">
             <div class="esc-item"><span class="esc-dot"></span>Check-ins & class changes</div>
             <div class="esc-item"><span class="esc-dot"></span>Standard cancellations & late fees</div>
@@ -844,10 +273,7 @@
           </div>
         </div>
         <div class="escalation-card">
-          <div class="escalation-head">
-            <div class="escalation-level">Level 02</div>
-            <div class="escalation-role">Manager</div>
-          </div>
+          <div class="escalation-head"><div class="escalation-level">Level 02</div><div class="escalation-role">Manager</div></div>
           <div class="escalation-body">
             <div class="esc-item"><span class="esc-dot"></span>Fee waivers & refunds</div>
             <div class="esc-item"><span class="esc-dot"></span>Billing disputes</div>
@@ -856,10 +282,7 @@
           </div>
         </div>
         <div class="escalation-card">
-          <div class="escalation-head">
-            <div class="escalation-level">Level 03</div>
-            <div class="escalation-role">Andreaa — Owner</div>
-          </div>
+          <div class="escalation-head"><div class="escalation-level">Level 03</div><div class="escalation-role">Andreaa — Owner</div></div>
           <div class="escalation-body">
             <div class="esc-item"><span class="esc-dot"></span>Refunds over $100</div>
             <div class="esc-item"><span class="esc-dot"></span>Safety incidents</div>
@@ -869,23 +292,9 @@
         </div>
       </div>
     </div>
-
-    <div class="page-footer">
-      <span class="footer-text">Internal · Confidential · May 2025</span>
-      <div class="footer-brand">
-        <svg width="12" height="12" viewBox="0 0 36 36" fill="none">
-          <ellipse cx="18" cy="18" rx="4" ry="4" fill="none" stroke="#E8A020" stroke-width="1.4"/>
-          <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4"/>
-          <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(90 18 18)"/>
-          <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(180 18 18)"/>
-          <ellipse cx="18" cy="6.5" rx="3" ry="5" fill="none" stroke="#E8A020" stroke-width="1.4" transform="rotate(270 18 18)"/>
-        </svg>
-        <span class="footer-brand-text">Bloom Pilates</span>
-      </div>
-    </div>
+    <div class="page-footer"><span class="footer-text">Internal · Confidential · May 2025</span><span class="footer-brand-text">Bloom Pilates</span></div>
   </div>
 
-  <!-- FRONT DESK -->
   <div class="page" id="front-desk">
     <div class="page-top-bar">
       <div class="page-top-logo">
@@ -900,16 +309,11 @@
       </div>
       <span class="page-top-label">Front Desk SOPs — Reception</span>
     </div>
-
     <div class="section-header">
-      <div>
-        <div class="section-eyebrow">02 — Reception</div>
-        <div class="section-title">Front Desk SOPs</div>
-      </div>
+      <div class="section-eyebrow">02 — Reception</div>
+      <div class="section-title">Front Desk SOPs</div>
     </div>
-
     <div class="section-body">
-
       <div class="subsection">
         <div class="subsection-title">Opening the Studio</div>
         <div class="subsection-note">Arrive 20 minutes before first class</div>
@@ -924,9 +328,7 @@
         </ol>
         <div class="alert-box">If you arrive and something is broken, damaged, or unsafe — do not open. Text the manager and owner immediately.</div>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Client Check-In</div>
         <div class="subsection-note">Every client, every time</div>
@@ -940,9 +342,7 @@
         </ol>
         <div class="alert-box">Never tell a client "don't worry about it" and wave them through without a booking. Every client in the room must be accounted for in Arketa.</div>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Phone, Email & DM Inquiries</div>
         <ol class="step-list">
@@ -953,9 +353,7 @@
           <li>If you don't know the answer — say "Let me find that out for you and follow up shortly" and get back to them within 1 hour.</li>
         </ol>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Closing the Studio</div>
         <ol class="step-list">
@@ -969,9 +367,7 @@
         </ol>
         <div class="alert-box">The last person to leave is responsible for the close checklist — even if an instructor is still there. Do not assume someone else handled it.</div>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Payments & Memberships</div>
         <ol class="step-list">
@@ -982,16 +378,10 @@
           <li>End-of-day: confirm daily sales total in Arketa matches expected transactions. Flag any discrepancies to the manager.</li>
         </ol>
       </div>
-
     </div>
-
-    <div class="page-footer">
-      <span class="footer-text">Internal · Confidential · May 2025</span>
-      <span class="footer-brand-text">Bloom Pilates</span>
-    </div>
+    <div class="page-footer"><span class="footer-text">Internal · Confidential · May 2025</span><span class="footer-brand-text">Bloom Pilates</span></div>
   </div>
 
-  <!-- INSTRUCTORS -->
   <div class="page" id="instructors">
     <div class="page-top-bar">
       <div class="page-top-logo">
@@ -1006,16 +396,11 @@
       </div>
       <span class="page-top-label">Instructor SOPs — Teaching Staff</span>
     </div>
-
     <div class="section-header">
-      <div>
-        <div class="section-eyebrow">03 — Teaching Staff</div>
-        <div class="section-title">Instructor SOPs</div>
-      </div>
+      <div class="section-eyebrow">03 — Teaching Staff</div>
+      <div class="section-title">Instructor SOPs</div>
     </div>
-
     <div class="section-body">
-
       <div class="subsection">
         <div class="subsection-title">Before Class</div>
         <ol class="step-list">
@@ -1027,9 +412,7 @@
         </ol>
         <div class="alert-box">Know your roster. If you see a new name you don't recognize, verify they're checked in and have completed their waiver before class starts.</div>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">During Class — Standards</div>
         <ol class="step-list">
@@ -1042,9 +425,7 @@
           <li>End class on time. If running short, skip extra content — never run over into the next class's setup window.</li>
         </ol>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">After Class</div>
         <ol class="step-list">
@@ -1055,9 +436,7 @@
           <li>If a client mentioned an injury or expressed frustration — flag it to the manager immediately, do not wait until next shift.</li>
         </ol>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Schedule, Subs & Absences</div>
         <ol class="step-list">
@@ -1069,9 +448,7 @@
         </ol>
         <div class="alert-box">A class without an instructor is never acceptable. It is your professional responsibility to ensure coverage before you are absent.</div>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Injury & Emergency Protocol</div>
         <ol class="step-list">
@@ -1082,16 +459,10 @@
           <li>Do not post about any incident on social media. Do not discuss it with other clients. All communications go through the owner.</li>
         </ol>
       </div>
-
     </div>
-
-    <div class="page-footer">
-      <span class="footer-text">Internal · Confidential · May 2025</span>
-      <span class="footer-brand-text">Bloom Pilates</span>
-    </div>
+    <div class="page-footer"><span class="footer-text">Internal · Confidential · May 2025</span><span class="footer-brand-text">Bloom Pilates</span></div>
   </div>
 
-  <!-- MANAGER -->
   <div class="page" id="manager">
     <div class="page-top-bar">
       <div class="page-top-logo">
@@ -1106,16 +477,11 @@
       </div>
       <span class="page-top-label">Studio Manager SOPs</span>
     </div>
-
     <div class="section-header">
-      <div>
-        <div class="section-eyebrow">04 — Management</div>
-        <div class="section-title">Studio Manager SOPs</div>
-      </div>
+      <div class="section-eyebrow">04 — Management</div>
+      <div class="section-title">Studio Manager SOPs</div>
     </div>
-
     <div class="section-body">
-
       <div class="subsection">
         <div class="subsection-title">Weekly Operational Checklist</div>
         <div class="week-grid">
@@ -1123,30 +489,28 @@
             <div class="week-head">Monday — Set the Week</div>
             <div class="week-body">
               <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Review Arketa schedule — confirm all classes have instructors and no gaps</div>
-              <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Flag clients with expiring memberships or packages this week</div>
+              <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Flag clients with expiring memberships this week</div>
               <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Review last week's shift notes and follow up on unresolved issues</div>
             </div>
           </div>
           <div class="week-card">
             <div class="week-head">Ongoing — Throughout the Week</div>
             <div class="week-body">
-              <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Monitor class fill rates — classes under 30% full 24 hrs out need action</div>
+              <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Monitor class fill rates — under 30% full 24 hrs out needs action</div>
               <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Handle Level 2 escalations within 2 hours</div>
-              <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Ensure studio is stocked: cleaning supplies, paper products, retail</div>
+              <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Ensure studio is stocked: supplies, paper products, retail</div>
             </div>
           </div>
           <div class="week-card">
             <div class="week-head">Friday — Close the Week</div>
             <div class="week-body">
-              <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Send weekly summary to owner: attendance, revenue, incidents, one highlight</div>
+              <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Send weekly summary to owner: attendance, revenue, incidents, highlight</div>
               <div class="week-item"><span class="esc-dot" style="margin-top:5px; flex-shrink:0;"></span>Confirm weekend staffing is locked and all subs confirmed</div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Refunds, Waivers & Billing</div>
         <ol class="step-list">
@@ -1157,9 +521,7 @@
           <li>Any client requesting to cancel their membership: collect their reason, log it, and notify the owner before processing cancellation.</li>
         </ol>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Staff Management</div>
         <ol class="step-list">
@@ -1170,9 +532,7 @@
           <li>Scheduling changes: confirm 2 weeks out minimum, 4 weeks preferred. Communicate changes to affected staff in writing.</li>
         </ol>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Client Experience & Retention</div>
         <ol class="step-list">
@@ -1183,16 +543,10 @@
           <li>Note birthdays in client profiles — a personal happy birthday note from Bloom goes a long way.</li>
         </ol>
       </div>
-
     </div>
-
-    <div class="page-footer">
-      <span class="footer-text">Internal · Confidential · May 2025</span>
-      <span class="footer-brand-text">Bloom Pilates</span>
-    </div>
+    <div class="page-footer"><span class="footer-text">Internal · Confidential · May 2025</span><span class="footer-brand-text">Bloom Pilates</span></div>
   </div>
 
-  <!-- OWNER -->
   <div class="page" id="owner">
     <div class="page-top-bar">
       <div class="page-top-logo">
@@ -1207,16 +561,11 @@
       </div>
       <span class="page-top-label">Owner SOPs — Andreaa</span>
     </div>
-
     <div class="section-header">
-      <div>
-        <div class="section-eyebrow">05 — Owner</div>
-        <div class="section-title">Owner SOPs — Andreaa</div>
-      </div>
+      <div class="section-eyebrow">05 — Owner</div>
+      <div class="section-title">Owner SOPs — Andreaa</div>
     </div>
-
     <div class="section-body">
-
       <div class="subsection">
         <div class="subsection-title">Monthly Business Review</div>
         <div class="subsection-note">Pull from Arketa reports on the 1st of each month</div>
@@ -1229,9 +578,7 @@
           <li>Set 3 priorities for the coming month — written down, shared with manager.</li>
         </ol>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Financial Oversight</div>
         <ol class="step-list">
@@ -1243,9 +590,7 @@
         </ol>
         <div class="alert-box">Financial freedom starts with knowing your numbers cold. No one should know this business's finances better than you.</div>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Growth & Marketing</div>
         <ol class="step-list">
@@ -1256,9 +601,7 @@
           <li>Quarterly Google Business Profile audit — ensure hours, photos, and information are accurate.</li>
         </ol>
       </div>
-
       <div class="sub-divider"></div>
-
       <div class="subsection">
         <div class="subsection-title">Legal & Compliance</div>
         <ol class="step-list">
@@ -1270,13 +613,8 @@
         </ol>
         <div class="alert-box">Your law background is a genuine asset here. Use it — and know when the matter is beyond your current knowledge and call in a professional.</div>
       </div>
-
     </div>
-
-    <div class="page-footer">
-      <span class="footer-text">Internal · Confidential · May 2025</span>
-      <span class="footer-brand-text">Bloom Pilates</span>
-    </div>
+    <div class="page-footer"><span class="footer-text">Internal · Confidential · May 2025</span><span class="footer-brand-text">Bloom Pilates</span></div>
   </div>
 
   <div style="height: 48px;"></div>
